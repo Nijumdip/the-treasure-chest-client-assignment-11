@@ -1,6 +1,6 @@
 import './App.css';
-import Home from './Components/Home/Home';
-import HeaderNav from './Components/HeaderNav/HeaderNav';
+import Home from './Components/MainHome/Home/Home';
+import HeaderNav from './Components/SharedPage/HeaderNav/HeaderNav';
 
 function App() {
   return (
