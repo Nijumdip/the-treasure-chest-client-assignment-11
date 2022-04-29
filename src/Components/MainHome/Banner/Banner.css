@@ -46,31 +46,26 @@ body{
 .left .content-body{
     right: 5%;
 }
-
-.left h1{
-    color:#2600fd;
-}
 .right{
     background: #eee;
-    color: #222;
     z-index: 2;
     width: 50vw;
 }
 .right .content-body{
     left:5%;
-    color: #222;
+    color: #151614;
 }
-.handle{
+.hr{
     position: absolute;
     height: 100%;
     display: block;
-    background-color: #2600fd;
+    background-color: #61AD00;
     width: 5px;
     top: 0;
     left: 50%;
     z-index: 3;
 }
-.skewed .handle{
+.skewed .hr{
     top: 50%;
     transform: rotate(30deg) translateY(-50%);
     height: 200%;

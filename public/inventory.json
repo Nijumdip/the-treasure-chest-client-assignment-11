@@ -1,0 +1,56 @@
+[
+    {
+       "id":"1",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJlnUhQCmmdD4KY0eUIOqBbI35ktYb-khHQxDZwY6mIw&s",
+       "name":"Arts & Photography Books",
+       "description":" In recent years, the Art world has embraced photography as a medium that people can use to create works of art. Yet, not all photographs are considered art.",
+       "price":"190-390",
+       "quantity":"900",
+       "supplier":"Manik"
+    },
+    {
+       "id":"2",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_l-4cGV0MhsCJTWTs6AaodMVPT4UK0n_fQg&usqp=CAU",
+       "name":"Children & Holly Books",
+       "description":"Genres in children's literature, Fantasy fiction, Historical fiction, Realistic fiction, Biography etc are available there.",
+       "price":"150-190",
+       "quantity":"690",
+       "supplier":"Abdul-Sah"
+    },
+    {
+       "id":"3",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVvtCYK65k5fEDVhezrlO-Pv19WC1EBSg2pQ&usqp=CAU",
+       "name":"Biographies books",
+       "description":"Four basic types of biographies: historical fiction, academic, fictional academic, and the prophetic biography etc are available there.",
+       "price":"190-250",
+       "quantity":"956",
+       "supplier":"Mokbul"
+    },
+    {
+       "id":"4",
+       "img":"https://i.ibb.co/0mHsLqT/images.jpg",
+       "name":"Magazine & Comics",
+       "description":"Different Types of Comic Books & Magazines are available there -Superhero, Slice-of-Life, Humor, Non-fiction, Science-Fiction/Fantasy, Horror etc.",
+       "price":"100-150",
+       "quantity":"495",
+       "supplier":"Mohidur"
+    },
+    {
+       "id":"5",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1pAQxMWYFNlYEwS5L0uCkaa9wt9WVfdq7WQ&usqp=CAU",
+       "name":"Travel Books",
+       "description":"Travel Books to Spark Your Wanderlust essential travel books are available there",
+       "price":"100-170",
+       "quantity":"439",
+       "supplier":"Roton"
+    },
+    {
+       "id":"6",
+       "img":"https://i.ibb.co/V3KqLbs/textbooks-2.png",
+       "name":"Text Books",
+       "description":"Book containing a comprehensive compilation of content in a branch of study with the intention of explaining it.Textbooks are produced to meet the needs of educators, usually at educational institutions.",
+       "price":"150-200",
+       "quantity":"950",
+       "supplier":"Mahid"
+    }
+ ]

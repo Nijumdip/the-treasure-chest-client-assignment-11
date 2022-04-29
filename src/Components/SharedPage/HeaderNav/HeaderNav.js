@@ -1,16 +1,24 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./HeaderNav.css";
 
 const HeaderNav = () => {
   return (
-    <Navbar bg="" variant="light">
+    <Navbar bg="" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">The Treasure Chest</Navbar.Brand>
-        <Nav className="ms-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Inventory</Nav.Link>
-          <Nav.Link href="#pricing">Blogs</Nav.Link>
-        </Nav>
+        <Navbar.Brand href="/">
+          <img src="https://i.ibb.co/R7Tm8VS/logo-green.png" alt="" />
+          The Treasure Chest
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Link to="/home">Home</Link>
+            <Link to="/inventory">Inventory</Link>
+            <Link to="/blogs">Blogs</Link>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
