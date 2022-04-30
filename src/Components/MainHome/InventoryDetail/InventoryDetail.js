@@ -6,7 +6,7 @@ const InventoryDetail = ({ book }) => {
   const { img, name, description, price, quantity, supplier } = book;
   return (
     <Col>
-      <Card>
+      <Card className="shadow ">
         <div>
           <img
             className="m-3 rounded-3"

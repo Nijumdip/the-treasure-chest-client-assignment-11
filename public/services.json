@@ -1,0 +1,38 @@
+[
+    {
+       "id":"1",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoGH7Nhiww8-Rz9dxNX_GaOn9K9inJTM_zNg&usqp=CAU",
+       "name":"Whole Sale & Money Back Guarantee",
+       "description":"Warehouse allow members to buy goods at wholesale prices.Such books usually wholesale for much less. 100% money back"
+    },
+    {
+       "id":"2",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSi9QRWEIb4bar6MzhiiKWri40G1wAC0Rlyw&usqp=CAU",
+       "name":"Buy Selling Used Books",
+       "description":"Here's where to sell used books, whether online or in-person. We've got options for selling textbooks, as well as hardcovers and paperbacks."
+    },
+    {
+       "id":"3",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRVQlnHebUQbxkV0BZbmcg-Rf3YbE0JwHMtA&usqp=CAU",
+       "name":"Cash on Delivery",
+       "description":"Cash on delivery (C.O.D.), also called collect on delivery, a common business term indicating that goods must be paid for at the time of delivery."
+    },
+    {
+       "id":"4",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBeEtq7j2FiFY8y2HFJMDSQQiao5r6PzSSjg&usqp=CAU",
+       "name":"Returns & Exchange",
+       "description":"Write the return address on top left of a label if you're sending a package.You will receive a refund by returning a product within 7 days."
+    },
+    {
+       "id":"5",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Orv327w-vhFbPwdcw6fY0dNwaj9wfKEvgw&usqp=CAU",
+       "name":"Free Gift Warp & Shipping ",
+       "description":"Orders over $500"
+    },
+    {
+       "id":"6",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKeJd2o6KmrdZem-9KYuxd8Si_MMfYCvTUNw&usqp=CAU",
+       "name":"Help & Support",
+       "description":"Call us : + 0123.4567.89"
+    }
+ ]
