@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
-import InventoryDetail from "../InventoryDetail/InventoryDetail";
+import InventoryHomeDetail from "../InventoryHomeDetail/InventoryHomeDetail";
 
-const Inventory = () => {
+const InventoryHome = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -17,11 +17,11 @@ const Inventory = () => {
 
       <Container className="d-flex justify-content-center align-items-center">
         <Row xs={1} md={3} className="g-4">
-          {books.map((book) => (
-            <InventoryDetail
+          {books.slice(0, 6).map((book) => (
+            <InventoryHomeDetail
                 key={book.id}
                 book={book}
-              ></InventoryDetail>
+              ></InventoryHomeDetail>
           ))}
         </Row>
       </Container>
@@ -29,4 +29,4 @@ const Inventory = () => {
   );
 };
 
-export default Inventory;
+export default InventoryHome;

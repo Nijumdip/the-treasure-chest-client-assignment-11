@@ -1,12 +1,11 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
-import "./InventoryDetail.css";
 
-const InventoryDetail = ({ book }) => {
+const InventoryHomeDetail = ({ book }) => {
   const { img, name, description, price, quantity, supplier } = book;
   return (
     <Col>
-      <Card className="shadow  border-0 ">
+      <Card className="shadow ">
         <div>
           <img
             className="m-3 rounded-3"
@@ -25,11 +24,11 @@ const InventoryDetail = ({ book }) => {
           <small>Supplier:{supplier}</small>
         </Card.Body>
         <div className="d-flex flex-column justify-content-center align-items-center ">
-          <Button variant="primary mb-2 w-75" size="lg"> Stock Update</Button>
+          <Button variant="primary mb-2 w-75" size="lg">Stock Update</Button>
         </div>
       </Card>
     </Col>
   );
 };
 
-export default InventoryDetail;
+export default InventoryHomeDetail;

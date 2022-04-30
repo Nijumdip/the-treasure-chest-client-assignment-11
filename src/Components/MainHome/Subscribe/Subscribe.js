@@ -12,7 +12,7 @@ const Subscribe = () => {
             </p>
       </div>
       <div className=" m-5 text-start">
-            <input className=" shadow text-success p-3 rounded-pill" type="email" name="email" placeholder="email" />
+            <input className=" shadow text-success p-3 border-0 rounded-pill" type="email" name="email" placeholder="Email here" />
       </div>
     </div>
   );

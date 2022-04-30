@@ -1,0 +1,57 @@
+Q. 01. Difference between javascript and nodejs .
+
+1. Ans:
+i) JavaScript  Simple programming language
+ii) It runs in any browser JavaScript Engine & We can only run JS on browsers.
+iii) It used to create web scripts 
+iv) The JS can easily add HTML and even play with the DOM.
+v) it is used in the development of the front end.
+
+
+i)  Node JS is an interpreter 
+ii) It is running environment for JavaScript that holds many excesses &NodeJS helps us run JS outside the browser as well.
+iii) It built on google's v8 engine.
+iv) The Node.JS, on the other hand, isn’t capable enough to add various HTML tags.
+v) it helps in the server-side development via the JS.
+
+
+Q.02. When should you use nodejs and when should you use mongodb ?
+
+Ans:
+i) MongoDB used for Multi-Object Transactions
+ii) MongoDB used for  SQL .
+iii) It used for Strong ACID guarantees.
+iv) MongoDB used for strong BI applications and those run against traditional SQL database
+v) Lots of memory ,storage does not auto-shrink when you remove records.
+
+
+i)  Node JS used for non-blocking 
+ii) It used for event-driven servers.
+iii) It's used for traditional web sites and back-end API services
+iv) It's used for back-end API services
+v) Used for providing serverless architecture and real-time communication support.
+
+
+
+Q.03. Differences between sql and no sql databases.
+
+Ans:
+i) SQL is a query programming language
+ii) SQL databases are vertically scalable .
+iii)  SQL used to query and operate database systems.
+iv) SQL databases are table-based,
+v) SQL databases are better for multi-row transactions
+
+
+i)  MySQL is a relational database 
+ii) NoSQL databases are horizontally scalable..
+iii) MySQL handle, store, modify and delete data and store data in an organized way
+iv) NoSQL databases are document, key-value, graph, or wide-column stores.
+v) oSQL is better for unstructured data like documents or JSON.
+
+
+
+Q.04. What is the purpose of jwt and how does it work?
+
+Ans:
+JWT can be used as an access token to prevent unwanted access to a protected resource. They're often used as Bearer tokens, which the API will decode and validate before sending a response.. It is a mechanism to verify the owner of some JSON data. It's an encoded, URL-safe string that can contain an unlimited amount of data (unlike a cookie) and is cryptographically signed. When a server receives a JWT, it can guarantee the data it contains can be trusted because it's signed by the source.

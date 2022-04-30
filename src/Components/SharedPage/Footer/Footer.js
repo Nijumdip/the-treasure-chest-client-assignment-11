@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div>
       <footer className="bg-dark text-white pb-5 pt-5">
-        <div className="container text-center text-md-left">
+        <div className="container">
           <div className="row">
             <div className="col-md-3 col-lg-3 mx-auto mt-3">
               <h5 className=" text-uppercase mb-4 font-weight-bold text-success">
@@ -88,12 +88,14 @@ const Footer = () => {
               </p>
             </div>
             <hr className="mb-4" />
-            <div className="col-md-7  col-lg-8">
+            <div className="txt-center">
               <p>
                 Copyright &copy; 2022, All rights reserved by :{" "}
                 <strong>The Treasure Chest</strong>
-                <br />
-                <strong>SHAMIMA NIJUM</strong>{" "}
+              </p>
+              <p>
+                {" "}
+                Design By <small>SHAMIMA NIJUM</small>
               </p>
             </div>
           </div>
