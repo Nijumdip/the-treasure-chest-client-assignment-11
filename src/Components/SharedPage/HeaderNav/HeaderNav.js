@@ -8,7 +8,7 @@ const HeaderNav = () => {
     <Navbar bg="" expand="lg">
       <Container>
         <Navbar.Brand href="/">
-          <img src="https://i.ibb.co/R7Tm8VS/logo-green.png" alt="" />
+          <img width="70px" height="60px" className='mx-3 rounded-circle' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH_NiLC2ZGvVap_FUFUd_4fFd1-stBFp8wfQ&usqp=CAU" alt="" />
           The Treasure Chest
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

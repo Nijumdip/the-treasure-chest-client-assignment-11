@@ -3,7 +3,7 @@ import React from "react";
 const Reviews = () => {
   return (
     <div className="container d-flex flex-sm-column flex-lg-row justify-content-center align-items-center mb-5 mt-5">
-      <div className=""></div>
+      {/* <div className=""></div> */}
       <div className="shadow m-2" style={{ width: "18rem", height: "320px" }}>
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiywPscw9IyDRPebVldthoIs5nT1pTi2Nn2A&usqp=CAU"
@@ -11,7 +11,8 @@ const Reviews = () => {
           width="100px"
           height="100px"
           alt="..."
-        />
+          />
+          <h6 className="mt-2">Rebeka</h6>
         <div className="card-body">
           <p className="card-text">
             I love their selection, prices, and staff members. I own a little
@@ -27,7 +28,8 @@ const Reviews = () => {
           width="100px"
           height="100px"
           alt="..."
-        />
+          />
+          <h6 className="mt-2">Redro</h6>
         <div className="card-body">
           <p className="card-text">
             Great prices on books! and they provide thise low prices. I dont
@@ -44,6 +46,7 @@ const Reviews = () => {
           height="100px"
           alt="..."
         />
+        <h6 className="mt-2">Filson</h6>
         <div className="card-body">
           <p className="card-text">
             This is a fantastic place - wonderful and quality selection,
