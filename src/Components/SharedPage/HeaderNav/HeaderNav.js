@@ -1,9 +1,18 @@
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import auth from "../../../Firebase/Firebase.init";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 import "./HeaderNav.css";
 
 const HeaderNav = () => {
+  const [user, loading, error] = useAuthState(auth);
+
+  const handleSignOut = () => {
+    signOut(auth);
+  }
+
   return (
     <Navbar bg="" expand="lg">
       <Container>
@@ -18,7 +27,13 @@ const HeaderNav = () => {
             <Link to="/inventory">Inventory</Link>
             <Link to="/manage">Manage-Items</Link>
             <Link to="/blogs">Blogs</Link>
-            <Link to="/login">Login</Link>
+            
+            {
+              user ?
+                <span className='mt-1'> &nbsp; {user.displayName} &nbsp; <Button onClick={handleSignOut}>Sign Out</Button></span>
+                :
+                <Link to="/login">Login</Link>
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>

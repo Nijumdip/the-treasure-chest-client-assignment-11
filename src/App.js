@@ -9,6 +9,7 @@ import HeaderNav from "./Components/SharedPage/HeaderNav/HeaderNav";
 import Page404 from "./Components/SharedPage/Page404/Page404";
 import Login from "./Components/SocialLogin/Login/Login";
 import Register from "./Components/SocialLogin/Register/Register";
+import RequireAuth from "./Components/SocialLogin/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -17,8 +18,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/inventory" element={<Inventory />} />
-        <Route path="/manage" element={<ManageItems/>} />
+        <Route path="/inventory" element={
+          <RequireAuth>
+            <Inventory />
+          </RequireAuth>
+        } />
+        <Route path="/manage" element={
+          <RequireAuth>
+            <ManageItems/>
+          </RequireAuth>
+        } />
         <Route path="/blogs" element={<Blogs/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />

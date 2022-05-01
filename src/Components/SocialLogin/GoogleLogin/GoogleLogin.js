@@ -1,13 +1,26 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import auth from "../../../Firebase/Firebase.init";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useSignInWithGoogle, useAuthState } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const GoogleLogin = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
+    useSignInWithGoogle(auth);
+  const [user, loading, error] = useAuthState(auth);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
+    
   const handleLogIn = () => {
     signInWithGoogle();
   };
+
   return (
     <div>
       <div className="d-flex mb-2 flex-row justify-content-center align-items-center">
