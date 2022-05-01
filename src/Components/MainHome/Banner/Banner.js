@@ -28,7 +28,7 @@ const Banner = () => {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzXmz7b8XAi6YxYXKS7JFUpwD2Rbl8lDdRAA&usqp=CAU" alt="" />
         </div>
       </div>   
-      <div class="hr"></div>   
+      <div className="hr"></div>   
     </div>
   );
 };

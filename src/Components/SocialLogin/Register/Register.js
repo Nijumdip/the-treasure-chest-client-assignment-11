@@ -20,7 +20,7 @@ const Register = () => {
           <div className="col-lg-7">
             <h2 className="text-success text-start ">Sign Up</h2>
             <Form className="text-start">
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Control type="name" placeholder="Your name" />
               </Form.Group>
 

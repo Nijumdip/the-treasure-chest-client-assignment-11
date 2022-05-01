@@ -79,12 +79,12 @@ const Footer = () => {
                 Stay Connected
               </h5>
               <p className="d-flex flex-row justify-content-center align-items-center ">
-                <i class="fa-brands fa-facebook mx-3"></i>
+                <i className="fa-brands fa-facebook mx-3"></i>
                 <br />
-                <i class="fa-brands fa-twitter-square mx-3"></i> <br />
-                <i class="fa-brands fa-google mx-3"></i>
+                <i className="fa-brands fa-twitter-square mx-3"></i> <br />
+                <i className="fa-brands fa-google mx-3"></i>
                 <br />
-                <i class="fa-brands fa-youtube mx-3"></i>
+                <i className="fa-brands fa-youtube mx-3"></i>
               </p>
             </div>
             <hr className="mb-4" />
