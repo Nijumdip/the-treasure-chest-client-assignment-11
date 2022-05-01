@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ManageInventory = () => {
+const ManageItems = () => {
     return (
         <div>
         Manage  Inventories
@@ -8,4 +8,4 @@ const ManageInventory = () => {
     );
 };
 
-export default ManageInventory;
+export default ManageItems;

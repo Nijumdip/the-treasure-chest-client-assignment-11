@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../SharedPage/Footer/Footer";
 import Banner from "../Banner/Banner";
 import InventoryHome from "../InventoryHome/InventoryHome";
 import Reviews from "../Reviews/Reviews";
@@ -14,7 +13,6 @@ const Home = () => {
       <Services></Services>
       <Reviews></Reviews>
       <Subscribe></Subscribe>
-      <Footer></Footer>
     </div>
   );
 };

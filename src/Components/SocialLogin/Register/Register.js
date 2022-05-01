@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import OrPart from "../OrPart/OrPart";
+import GithubLogin from "../GithubLogin/GithubLogin";
+import GoogleLogin from "../GoogleLogin/GoogleLogin";
 
 const Register = () => {
   return (
@@ -17,7 +18,7 @@ const Register = () => {
             />
           </div>
           <div className="col-lg-7">
-            <h2 className="text-success text-start ">Please Register</h2>
+            <h2 className="text-success text-start ">Sign Up</h2>
             <Form className="text-start">
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Control type="name" placeholder="Your name" />
@@ -34,29 +35,32 @@ const Register = () => {
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
               </Form.Group>
-              <div>
+              <div className="d-flex flex-row justify-content-center mb-2">
                 <Button
-                  variant="success w-50 d-block mx-auto mb-3"
+                  style={{width:'300px'}}
+                  variant="success mb-3"
                   type="submit"
                 >
+                <img
+                  width="30px"
+                  className="mx-2 rounded-circle"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZLuxqbW7nxjHFd8nUlmdq_IA4P0cXbfjlrQ&usqp=CAU"
+                  alt=""
+                />
                   Sign Up
                 </Button>
               </div>
             </Form>
             
             <div className="text-start">
-              <Link to="#" className="text-decoration-none">
-                Forget password ?
-              </Link>
+              <Link to="#" className="text-decoration-none">Forget password ? </Link>
               <p>
                 Already have an account ?{" "}
-                <Link to="/login" className="text-decoration-none">
-                  {" "}
-                  Please Login{" "}
-                </Link>
+                <Link to="/login" className="text-decoration-none"> Please Login </Link>
               </p>
             </div>
-            <OrPart></OrPart>
+            <GoogleLogin></GoogleLogin>
+            <GithubLogin></GithubLogin>
           </div>
         </div>
       </div>
