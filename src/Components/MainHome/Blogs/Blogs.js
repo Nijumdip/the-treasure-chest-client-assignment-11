@@ -158,13 +158,13 @@ const Blogs = () => {
                 signed by the source.
               </p>
             </div>
-            <div className="m-5 ">
+            <div className="mt-5 ">
               <Button variant="outline-success w-75 " size="lg">
                 {" "}
                 Read More
               </Button>
             </div>
-          </Card>
+            </Card>
         </Col>
       </Row>
     </Container>

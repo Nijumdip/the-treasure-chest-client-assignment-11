@@ -18,6 +18,7 @@ const HeaderNav = () => {
             <Link to="/inventory">Inventory</Link>
             <Link to="/manage">Manage-Inventories</Link>
             <Link to="/blogs">Blogs</Link>
+            <Link to="/login">Login</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
