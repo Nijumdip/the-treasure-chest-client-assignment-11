@@ -1,10 +1,92 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import GithubLogin from "../GithubLogin/GithubLogin";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
+// import { sendEmailVerification } from "firebase/auth";
+import LoadingSpinner from "../../SharedPage/LoadingSpinner/LoadingSpinner";
 
 const Register = () => {
+  const [userInfo, setUserInfo] = useState({ email: '', password: '', confirmPassword:'' });
+  const [errors, setErrors] = useState({ emailError: '', passwordError: '', generalError: '' });
+  const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  if (loading) {
+    <LoadingSpinner></LoadingSpinner>
+  }
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (error) {
+      setErrors({
+        ...errors,
+        general: (
+          <div>
+            <p className="text-danger">{error?.message}</p>
+          </div>
+        ),
+      });
+    }
+  }, [error]);
+ 
+
+  const handleEmailBlur = (e) => {
+    const emailRegex = /\S+@\S+\.\S+/;
+    const validEmail = emailRegex.test(e.target.value);
+    if (validEmail) {
+      setUserInfo({ ...userInfo, email: e.target.value });
+      setErrors({ ...errors, emailError: "" });
+    }
+    else {
+      setErrors({ ...errors, emailError: <p className="text-danger">Please Provide a valid Email</p> });
+      setUserInfo({ ...userInfo, emailError: "" });
+    }
+  }
+
+  const handlePasswordBlur = (e) => {
+    const passwordRegex = /(?=.*?[0-9])/;
+    const validPassword = passwordRegex.test(e.target.value);
+    if (validPassword) {
+      setUserInfo({ ...userInfo, password: e.target.value });
+      setErrors({ ...errors, passwordError: "" });
+    }
+    else {
+      setErrors({ ...errors, passwordError: <p className="text-danger">At least one numeric digit ! </p> });
+      setUserInfo({ ...userInfo, passwordError: "" });
+    }
+  }
+  const handleConfirmPasswordBlur = (e) => {
+    const confirmPass = e.target.value;
+    if (confirmPass === userInfo.password) {
+      setUserInfo({ ...userInfo, confirmPassword: e.target.value });
+      setErrors({ ...errors, passwordError: "" });
+    }
+    else {
+      setErrors({ ...errors, passwordError: <p className="text-danger">Password don't match  </p> });
+      setUserInfo({ ...userInfo, confirmPassword: "" });
+    }
+  }
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(userInfo.email, userInfo.password, userInfo.confirmPassword);
+  }
+
   return (
     <div className="Form my-5 mx-5 bg-light p-5 border-0 shadow">
       <div className="container row">
@@ -19,17 +101,19 @@ const Register = () => {
           </div>
           <div className="col-lg-7">
             <h2 className="text-success text-start ">Sign Up</h2>
-            <Form className="text-start">
-              <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Control type="name" placeholder="Your name" />
-              </Form.Group>
-
+            <Form onSubmit={handleSubmit} className="text-start">
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control type="email" placeholder="Enter email" onBlur={handleEmailBlur} />
               </Form.Group>
+              {errors.emailError}
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" placeholder="Password" onBlur={handlePasswordBlur} />
+            </Form.Group>
+            {errors.passwordError}
+            
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Control type="password" placeholder="Confirm Password" onBlur={handleConfirmPasswordBlur} />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicCheckbox">

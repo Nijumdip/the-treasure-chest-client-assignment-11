@@ -1,54 +1,93 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import auth from "../../../Firebase/Firebase.init";
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
+import {
+  useSignInWithEmailAndPassword,
+  useSendPasswordResetEmail,
+} from "react-firebase-hooks/auth";
 import GithubLogin from "../GithubLogin/GithubLogin";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
+import LoadingSpinner from "../../SharedPage/LoadingSpinner/LoadingSpinner";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  let errorElement;
-  const [
-    signInWithEmailAndPassword, user, loading, hookError,] =
+  const [userInfo, setUserInfo] = useState({ email: "", password: "" });
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+    general: "",
+  });
+  const [signInWithEmailAndPassword, user, loading, hookError] =
     useSignInWithEmailAndPassword(auth);
-  
-  if (hookError) {
-    errorElement = (
-      <div><p className="text-danger"> Error: {hookError?.message}</p></div>
-    )
-    }
+  const [sendPasswordResetEmail, sending, error] =
+    useSendPasswordResetEmail(auth);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-   const handleEmailBlur = (event) => {
+  const resetPass = async () => {
+    await sendPasswordResetEmail(userInfo.email);
+    alert("Sent email");
+  };
+
+  if (loading || sending) {
+    <LoadingSpinner></LoadingSpinner>
+  }
+
+  useEffect(() => {
+    if (user) {
+      navigate(from);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (hookError||error) {
+      setErrors({
+        ...errors,
+        general: (
+          <div>
+            <p className="text-danger">{hookError?.message} {error?.message}</p>
+            
+          </div>
+        ),
+      });
+    }
+  }, [hookError]);
+
+  const handleEmailBlur = (event) => {
     const emailRegex = /\S+@\S+\.\S+/;
     const validEmail = emailRegex.test(event.target.value);
     if (validEmail) {
-      setEmail(event.target.value); 
+      setUserInfo({ ...userInfo, email: event.target.value });
+      setErrors({ ...errors, email: "" });
+    } else {
+      setErrors({
+        ...errors,
+        email: <p className="text-danger">Please Provide a valid Email</p>,
+      });
+      setUserInfo({ ...userInfo, email: "" });
     }
-    else {
-      setError(<p className="text-danger">Please Provide a valid Email</p>)
-    }
-  } 
+  };
 
   const handlePasswordBlur = (event) => {
     const passwordRegex = /(?=.*?[0-9])/;
     const validPassword = passwordRegex.test(event.target.value);
     if (validPassword) {
-      setPassword(event.target.value);
+      setUserInfo({ ...userInfo, password: event.target.value });
+      setErrors({ ...errors, password: "" });
+    } else {
+      setErrors({
+        ...errors,
+        password: <p className="text-danger">At least one numeric digit ! </p>,
+      });
+      setUserInfo({ ...userInfo, password: "" });
     }
-    else {
-      setError(<p className="text-danger">Please Provide a valid Password</p>)
-    }
-  }
-  
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(email, password);
-  }
-
+    signInWithEmailAndPassword(userInfo.email, userInfo.password);
+  };
 
   return (
     <div className="my-5 mx-5 bg-light p-5 border-0 shadow">
@@ -67,13 +106,23 @@ const Login = () => {
           <h2 className="text-success text-start ">Please Login</h2>
           <Form onSubmit={handleSubmit} className="text-start">
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="email" placeholder="Enter email" onBlur={handleEmailBlur} />
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                onBlur={handleEmailBlur}
+              />
             </Form.Group>
-           
+            {errors.email}
+
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Control type="password" placeholder="Password" onBlur={handlePasswordBlur} />
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                onBlur={handlePasswordBlur}
+              />
             </Form.Group>
-            {error}
+            {errors.password}
+
             <div className="d-flex flex-row justify-content-center mb-2">
               <Button
                 style={{ width: "300px" }}
@@ -89,11 +138,11 @@ const Login = () => {
                 Login
               </Button>
             </div>
-            {errorElement }
+            {errors.general}
           </Form>
-          
+
           <div className="text-start">
-            <Link to="#" className="text-decoration-none">
+            <Link to="#" onClick={resetPass} className="text-decoration-none">
               Forget password ?
             </Link>
             <p>

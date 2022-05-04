@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import auth from "../../../Firebase/Firebase.init";
+import auth from "../../firebase.init";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import "./HeaderNav.css";
@@ -30,7 +30,7 @@ const HeaderNav = () => {
             
             {
               user ?
-                <span className='mt-1'> &nbsp; {user.displayName} &nbsp; <Button onClick={handleSignOut}>Sign Out</Button></span>
+                <span className='mt-1'> &nbsp; {user.displayName} {user.email} &nbsp; <Button onClick={handleSignOut}>Sign Out</Button></span>
                 :
                 <Link to="/login">Login</Link>
             }

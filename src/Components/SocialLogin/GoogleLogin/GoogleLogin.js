@@ -1,8 +1,8 @@
-import React from "react";
 import { Button } from "react-bootstrap";
-import auth from "../../../Firebase/Firebase.init";
+import auth from "../../firebase.init";
 import { useSignInWithGoogle, useAuthState } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
+import LoadingSpinner from "../../SharedPage/LoadingSpinner/LoadingSpinner";
 
 const GoogleLogin = () => {
   const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
@@ -12,11 +12,25 @@ const GoogleLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  let errorElement;
 
-    if (user) {
-        navigate(from, { replace: true });
-    }
-    
+  if (user || userGoogle) {
+    navigate(from, { replace: true });
+  }
+  if (loading || loadingGoogle) {
+    return <LoadingSpinner></LoadingSpinner>
+  }
+  if (error || errorGoogle) {
+    errorElement = (
+      <div>
+        <p className="text-danger">
+          Error: {error?.message}
+          {errorGoogle?.message}
+        </p>
+      </div>
+    );
+  }
+
   const handleLogIn = () => {
     signInWithGoogle();
   };
@@ -28,6 +42,7 @@ const GoogleLogin = () => {
         <p className="mt-2 px-2">Or</p>
         <div style={{ height: "2px" }} className=" bg-success w-50"></div>
       </div>
+      {errorElement}
       <div className="d-flex flex-row justify-content-center mb-2">
         <Button
           onClick={handleLogIn}
