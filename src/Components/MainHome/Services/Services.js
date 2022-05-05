@@ -14,7 +14,7 @@ const Services = () => {
 
   return (
     <div className="mt-5 mb-4">
-      <h1 className="mt-5 mb-4 text-primary">Manage Inventory System</h1>
+      <h1 className="mt-5 mb-4 text-primary">Why You should Choose us</h1>
 
       <Container className="d-flex justify-content-center align-items-center">
         <Row xs={1} md={3} className="g-3">

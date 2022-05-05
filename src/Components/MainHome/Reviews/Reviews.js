@@ -6,8 +6,8 @@ const Reviews = () => {
         <div>
             <h1 className="mt-5 mb-4 text-primary">Customers Testimonial</h1>
         </div>
-        <div className="container d-flex flex-row justify-content-center align-items-center mb-5 mt-5">
-            <div className="shadow m-2" style={{ width: "18rem", height: "320px" }}>
+        <div className="container d-lg-flex  flex-row justify-content-center align-items-center mb-5 mt-5">
+            <div className="shadow mx-auto" style={{ width: "18rem", height: "320px" }}>
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiywPscw9IyDRPebVldthoIs5nT1pTi2Nn2A&usqp=CAU"
                 className="rounded-circle shadow mt-2"
@@ -24,7 +24,7 @@ const Reviews = () => {
                 </p>
               </div>
             </div>
-            <div className="shadow m-2" style={{ width: "18rem", height: "320px" }}>
+            <div className="shadow mx-auto" style={{ width: "18rem", height: "320px" }}>
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0qg3Qt10IOZgdUQE-JooI5iPG9fPck1jJ3A&usqp=CAU"
                 className="rounded-circle shadow mt-2 border"
@@ -41,7 +41,7 @@ const Reviews = () => {
                 </p>
               </div>
             </div>
-            <div className="shadow m-2" style={{ width: "18rem", height: "320px" }}>
+            <div className="shadow mx-auto" style={{ width: "18rem", height: "320px" }}>
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoQwgvvfptmgifqWxF8kjrwL0dlo-iNirrMw&usqp=CAU"
                 className="rounded-circle shadow mt-2"

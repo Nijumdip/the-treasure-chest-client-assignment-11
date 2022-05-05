@@ -2,7 +2,7 @@ import React from "react";
 
 const Subscribe = () => {
   return (
-    <div className=" container mt-5 mb-5 d-flex flex-row justify-content-evenly align-items-center shadow text-success ">
+    <div className=" container pb-3 mt-5 mb-5 d-lg-flex flex-row justify-content-evenly align-items-center shadow text-success ">
       <div className=" m-5 text-start ">
             <h5>SUBSCRIBE OUR NEWS LETTER</h5>
             <p>
@@ -12,7 +12,7 @@ const Subscribe = () => {
             </p>
       </div>
       <div className=" m-5 text-start">
-            <input className=" shadow text-success p-3 border-0 rounded-pill" type="email" name="email" placeholder="Email here" />
+            <input style={{width:'300px'}} className=" shadow text-success p-3 border-0 rounded-pill" type="email" name="email" placeholder="Email here" />
       </div>
     </div>
   );
