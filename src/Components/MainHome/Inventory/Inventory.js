@@ -4,6 +4,7 @@ import InventoryDetail from "../InventoryDetail/InventoryDetail";
 
 const Inventory = () => {
   const [books, setBooks] = useState([]);
+ 
 
   useEffect(() => {
     const url = "/inventory.json";

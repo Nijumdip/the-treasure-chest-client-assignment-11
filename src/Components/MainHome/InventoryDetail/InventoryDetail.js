@@ -4,6 +4,7 @@ import "./InventoryDetail.css";
 
 const InventoryDetail = ({ book }) => {
   const { img, name, description, price, quantity, supplier } = book;
+
   return (
     <Col>
       <Card className="shadow  border-0 ">

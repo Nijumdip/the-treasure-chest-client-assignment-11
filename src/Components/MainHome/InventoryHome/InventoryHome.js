@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import InventoryHomeDetail from "../InventoryHomeDetail/InventoryHomeDetail";
 
 const InventoryHome = () => {
   const [books, setBooks] = useState([]);
+  /* const handleViewMore = (id) => {
+    navigate(`/services`) */
 
   useEffect(() => {
     const url = "/inventory.json";

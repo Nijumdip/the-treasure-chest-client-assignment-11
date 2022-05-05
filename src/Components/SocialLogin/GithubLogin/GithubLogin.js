@@ -13,6 +13,7 @@ const GithubLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  
 
   if (user || userGithub) {
     navigate(from, { replace: true });
