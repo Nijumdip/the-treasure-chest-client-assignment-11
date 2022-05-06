@@ -9,7 +9,7 @@ const InventoryHome = () => {
     navigate(`/services`) */
 
   useEffect(() => {
-    const url = "/inventory.json";
+    const url = "https://the-treasure-chest-server.herokuapp.com/inventory";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBooks(data));
@@ -22,9 +22,9 @@ const InventoryHome = () => {
         <Row xs={1} md={3} className="g-4">
           {books.slice(0, 6).map((book) => (
             <InventoryHomeDetail
-                key={book.id}
-                book={book}
-              ></InventoryHomeDetail>
+              key={book.id}
+              book={book}
+            ></InventoryHomeDetail>
           ))}
         </Row>
       </Container>

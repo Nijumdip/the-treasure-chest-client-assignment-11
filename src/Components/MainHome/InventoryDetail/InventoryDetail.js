@@ -1,9 +1,10 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./InventoryDetail.css";
 
 const InventoryDetail = ({ book }) => {
-  const { img, name, description, price, quantity, supplier } = book;
+  const { _id, img, name, description, price, quantity, supplier } = book;
 
   return (
     <Col>
@@ -26,7 +27,7 @@ const InventoryDetail = ({ book }) => {
           <small>Supplier:{supplier}</small>
         </Card.Body>
         <div className="d-flex flex-column justify-content-center align-items-center ">
-          <Button variant="primary mb-2 w-75" size="lg"> Stock Update</Button>
+          <Link to={`/inventory/${_id}`}><Button variant="primary mb-2 w-100" size="lg"> Stock Update</Button></Link>
         </div>
       </Card>
     </Col>

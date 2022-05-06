@@ -4,10 +4,9 @@ import InventoryDetail from "../InventoryDetail/InventoryDetail";
 
 const Inventory = () => {
   const [books, setBooks] = useState([]);
- 
 
   useEffect(() => {
-    const url = "/inventory.json";
+    const url = "https://the-treasure-chest-server.herokuapp.com/inventory";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBooks(data));
@@ -19,10 +18,7 @@ const Inventory = () => {
       <Container className="d-flex justify-content-center align-items-center">
         <Row xs={1} md={3} className="g-4">
           {books.map((book) => (
-            <InventoryDetail
-                key={book.id}
-                book={book}
-              ></InventoryDetail>
+            <InventoryDetail key={book.id} book={book}></InventoryDetail>
           ))}
         </Row>
       </Container>

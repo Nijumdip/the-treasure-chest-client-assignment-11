@@ -4,6 +4,7 @@ import Blogs from "./Components/MainHome/Blogs/Blogs";
 import Home from "./Components/MainHome/Home/Home";
 import Inventory from "./Components/MainHome/Inventory/Inventory";
 import ManageItems from "./Components/MainHome/ManageItems/ManageItems";
+import SingleInventory from "./Components/MainHome/SingleInventory/SingleInventory";
 import Footer from "./Components/SharedPage/Footer/Footer";
 import HeaderNav from "./Components/SharedPage/HeaderNav/HeaderNav";
 import Page404 from "./Components/SharedPage/Page404/Page404";
@@ -21,6 +22,11 @@ function App() {
         <Route path="/inventory" element={
           <RequireAuth>
             <Inventory />
+          </RequireAuth>
+        } />
+        <Route path="/inventory/:id" element={
+          <RequireAuth>
+            <SingleInventory />
           </RequireAuth>
         } />
         <Route path="/manage" element={
