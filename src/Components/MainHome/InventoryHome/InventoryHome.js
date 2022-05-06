@@ -5,8 +5,6 @@ import InventoryHomeDetail from "../InventoryHomeDetail/InventoryHomeDetail";
 
 const InventoryHome = () => {
   const [books, setBooks] = useState([]);
-  /* const handleViewMore = (id) => {
-    navigate(`/services`) */
 
   useEffect(() => {
     const url = "https://the-treasure-chest-server.herokuapp.com/inventory";

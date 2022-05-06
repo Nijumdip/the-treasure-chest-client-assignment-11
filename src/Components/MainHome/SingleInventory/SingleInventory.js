@@ -6,7 +6,7 @@ const SingleInventory = () => {
     const { id } = useParams();
     const [singleInventory, setSingleInventory] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory/${id}`)
+        fetch(`https://the-treasure-chest-server.herokuapp.com/inventory/${id}`)
             .then(res => res.json())
             .then(data => setSingleInventory(data));
     },[])
