@@ -25,7 +25,8 @@ const InventoryHomeDetail = ({ book }) => {
           <small>Supplier:{supplier}</small>
         </Card.Body>
         <div className="d-flex flex-column justify-content-center align-items-center ">
-          <Link to={`/inventory/${_id}`}><Button variant="primary mb-2 w-100" size="lg">Stock Update</Button></Link>
+          <Link to={`/inventory/${_id}`}
+        ><Button variant="primary mb-2 w-100" size="lg">Stock Update</Button></Link>
         </div>
       </Card>
     </Col>
