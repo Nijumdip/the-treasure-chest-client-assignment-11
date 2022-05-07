@@ -39,7 +39,8 @@ const AllItems = () => {
                 <small>Supplier:{book.supplier}</small>
               </Card.Body>
               <div className="d-flex flex-column justify-content-center align-items-center ">
-              <Button variant="primary mb-2 w-100"> Stock Update</Button>
+              <Link to={`/editItems/${book._id}`}><Button variant="primary mb-2"> Edit Items </Button></Link>
+              <Button variant="primary mb-2 w-25"> Delete </Button>
               </div>
             </Card>
           </Col>

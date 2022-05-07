@@ -6,6 +6,7 @@ import Inventory from "./Components/MainHome/Inventory/Inventory";
 import ManageItems from "./Components/MainHome/ManageItems/ManageItems";
 import AddItem from "./Components/MainHome/SingleInventory/AddItem";
 import AllItems from "./Components/MainHome/SingleInventory/AllItems";
+import EditItems from "./Components/MainHome/SingleInventory/EditItems";
 import MyItems from "./Components/MainHome/SingleInventory/MyItems";
 import SingleInventory from "./Components/MainHome/SingleInventory/SingleInventory";
 import Footer from "./Components/SharedPage/Footer/Footer";
@@ -38,6 +39,15 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route
+          path="/editItems/:id"
+          element={
+            <RequireAuth>
+              <EditItems />
+            </RequireAuth>
+          }
+        />
+        
         <Route
           path="/manage/*"
           element={
