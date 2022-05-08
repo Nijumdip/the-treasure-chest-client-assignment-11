@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const SingleInventory = () => {
   const { id } = useParams();
   const [singleInventory, setSingleInventory] = useState({});
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => console.log(data);
+
   useEffect(() => {
     fetch(`https://the-treasure-chest-server.herokuapp.com/inventory/${id}`)
       .then((res) => res.json())
@@ -32,11 +36,14 @@ const SingleInventory = () => {
             <small>Supplier: {singleInventory.supplier} </small>
           </Card.Body>
         </div>
-        <div className="d-flex flex-column justify-content-center align-items-center mb-2 ">
-          <Button variant="primary mb-2 w-25"> Delivered </Button>
-          <Link to='/manage'><Button variant="primary mb-2"> Go to Manage-Items </Button></Link>
-          
-        </div>
+        <div className="d-flex flex-row justify-content-center align-items-center mb-2 ">
+          <Button variant="primary mx-3 w-25"> Delivered </Button>
+          <Link to='/manage'><Button variant="primary">Go Manage-Item</Button></Link>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input className='px-1 mx-1 w-50' placeholder="Quantity" {...register("quantity", { required: true })} />
+            <input className='px-1 my-1' value='Re Stock' type="submit" />
+          </form>
       </Card>
     </div>
   );
