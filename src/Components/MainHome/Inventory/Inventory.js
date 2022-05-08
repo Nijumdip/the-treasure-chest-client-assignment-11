@@ -18,7 +18,7 @@ const Inventory = () => {
       <Container className="d-flex justify-content-center align-items-center">
         <Row xs={1} md={3} className="g-4">
           {books.map((book) => (
-            <InventoryDetail key={book.id} book={book}></InventoryDetail>
+            <InventoryDetail key={book._id} book={book}></InventoryDetail>
           ))}
         </Row>
       </Container>

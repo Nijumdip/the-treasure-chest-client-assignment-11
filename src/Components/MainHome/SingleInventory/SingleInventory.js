@@ -2,12 +2,49 @@ import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import swal from "sweetalert";
 
 const SingleInventory = () => {
   const { id } = useParams();
   const [singleInventory, setSingleInventory] = useState({});
   const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = (data) => console.log(data);
+  
+  /* const onSubmit = (data, e) => console.log();
+   fetch(`http://localhost:5000/inventory/${id} `, {
+    method: "PUT",
+    headers: {
+        "content-type": "application/json",
+    },
+    body: JSON.stringify(data),
+}, [])
+    .then(res => res.json())
+    .then(data => {
+      if (data.acknowledged) {
+        swal("Item is successfully updated!", {
+          icon: "success",
+        });
+      }
+      else {
+        swal(" Somethings wrong !! Item isn't updated", {
+          icon: "danger",
+        });
+      }
+      e.target.reset();
+    }); */
+  
+
+
+
+  var [quantity, setQuantity] = useState(0);
+  const handleDelivered = (itemQuantity) => {
+    var numberQuantity = Number(itemQuantity);
+    setQuantity(numberQuantity);
+    const finalQuantity=quantity--
+    console.log(finalQuantity);
+
+  }
+  
 
   useEffect(() => {
     fetch(`https://the-treasure-chest-server.herokuapp.com/inventory/${id}`)
@@ -37,7 +74,7 @@ const SingleInventory = () => {
           </Card.Body>
         </div>
         <div className="d-flex flex-row justify-content-center align-items-center mb-2 ">
-          <Button variant="primary mx-3 w-25"> Delivered </Button>
+          <Button onClick={()=>handleDelivered(singleInventory.quantity)} variant="primary mx-3 w-25"> Delivered </Button>
           <Link to='/manage'><Button variant="primary">Go Manage-Item</Button></Link>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>

@@ -25,7 +25,6 @@ const AddItem = () => {
     <div className='mb-5'>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input className='px-1 w-25 my-2' placeholder="img link" {...register("img", { required: true})} /> <br />
-        <input className='px-1 w-25 my-2' value={user.email} {...register("email", { required: true})} /> <br />
         <input className='px-1 w-25 my-2' placeholder="Name" {...register("name", { required: true})} /><br />
         <textarea className='px-1 w-25 my-2' rows='8' cols='22' placeholder="Description" {...register("description", { required: true})} /><br />
         <input className='px-1 w-25 my-2' placeholder="Price" {...register("price", { required: true})} /><br />
