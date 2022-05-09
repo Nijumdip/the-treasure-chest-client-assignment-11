@@ -8,7 +8,6 @@ const SingleInventory = () => {
   const { id } = useParams();
   const [singleInventory, setSingleInventory] = useState({});
   const { register, handleSubmit } = useForm();
-  // const onSubmit = (data) => console.log(data);
 
   const onSubmit = (data, e) =>
     fetch(

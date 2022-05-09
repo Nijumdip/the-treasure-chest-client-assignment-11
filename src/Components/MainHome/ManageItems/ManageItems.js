@@ -3,7 +3,6 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, Route, Routes } from "react-router-dom";
 import AddItem from "../SingleInventory/AddItem";
 import AllItems from "../SingleInventory/AllItems";
-import MyItems from "../SingleInventory/MyItems";
 
 const ManageItems = () => {
   return (
