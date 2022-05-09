@@ -5,7 +5,7 @@ import auth from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import GithubLogin from "../GithubLogin/GithubLogin";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
-// import { sendEmailVerification } from "firebase/auth";
+import { sendEmailVerification } from "firebase/auth";
 import LoadingSpinner from "../../SharedPage/LoadingSpinner/LoadingSpinner";
 
 const Register = () => {
