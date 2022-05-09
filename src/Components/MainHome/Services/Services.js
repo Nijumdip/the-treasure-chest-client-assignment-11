@@ -6,7 +6,7 @@ const Services = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    const url = "/services.json";
+    const url = "https://the-treasure-chest-server.herokuapp.com/services";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setServices(data));

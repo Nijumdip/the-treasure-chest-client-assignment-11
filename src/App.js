@@ -58,7 +58,6 @@ function App() {
         >
           <Route path="addItems" element={<AddItem />} />
           <Route path="allItems" element={<AllItems />} />
-          <Route path="myItems" element={<MyItems />} />
         </Route>
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/login" element={<Login />} />

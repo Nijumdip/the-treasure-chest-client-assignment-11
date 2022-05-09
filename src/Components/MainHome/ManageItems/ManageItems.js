@@ -34,7 +34,6 @@ const ManageItems = () => {
         <Routes>
           <Route path="addItems" element={<AddItem />} />
           <Route path="allItems" element={<AllItems />} />
-          <Route path="myItems" element={<MyItems />} />
         </Routes>
       </div>
     </div>
